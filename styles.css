@@ -1,0 +1,601 @@
+p {
+	margin: 0;
+	margin-top: 7px;
+}
+
+.minion {
+	width: 10px;
+	height: 10px;
+	background-color: red;
+	border: 1px black solid;
+	position: absolute;
+	top: 470px;
+	left: 5px;
+	z-index: 2;
+}
+
+.towerSlot {
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	background-color: #010021;
+	border: 1px #2b7cff solid;
+	position: absolute;
+	z-index: 3;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: bold;
+	color: white;
+}
+
+.towerSlot:hover {
+	background-color: #969696;
+	border-color: white;
+}
+
+.towerSlot:active {
+	background-color: #646464;
+}
+
+.tracer {
+	position: absolute;
+	width: 3px;
+	height: 3px;
+	background-color: yellow;
+	z-index: 3;
+}
+
+#container {
+	width: 800px;
+	height: 600px;
+	background-color: black;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -300px;
+	margin-left: -400px;
+}
+
+#start {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	z-index: 1;
+}
+
+#money {
+	position: absolute;
+	top: 20px;
+	left: 75px;
+	width: 100px;
+	height: 20px;
+	color: white;
+	background-color: #010021;
+	border: 1px #2b7cff solid;
+	text-align: right;
+}
+
+#money p {
+	margin-top: 2px;
+	margin-right: 5px;
+}
+
+#errorDisplay {
+	position: absolute;
+	top: 20px;
+	left: 200px;
+	width: 200px;
+	height: 20px;
+	color: red;
+}
+
+#errorDisplay p {
+	margin-top: 2px;
+}
+
+#waveCounter {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	color: white;
+	z-index: 3;
+}
+
+#waveCounter p {
+	margin-top: 2px;
+}
+
+#lifeCounter {
+	position: absolute;
+	top: 50px;
+	left: 75px;
+	width: 100px;
+	height: 20px;
+	color: white;
+	text-align: center;
+}
+
+#lifeCounter p {
+	margin-top: 2px;
+	margin-right: 5px;
+}
+
+#towerInfo {
+	position: absolute;
+	top: 90px;
+	width: 150px;
+	height: 115px;
+	color: white;
+	background-color: #010021;
+	border: 1px #2b7cff solid;
+}
+
+#towerInfo h4 {
+	margin-left: 30px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+#towerInfo p {
+	margin-top: 2px;
+	margin-left: 5px;
+}
+
+#path1 {
+	width: 75%;
+	height: 50px;
+	background-color: #62617c;
+	border: 1px #2b7cff solid;
+	border-left: 0;
+	border-right: 0;
+	position: relative;
+	top: 75%;
+	left: 0px;
+	float: left;
+}
+
+#checkpoint {
+	width: 51px;
+	height: 50px;
+	background-color: #62617c;
+	border: 1px #2b7cff solid;
+	border-left: 0;
+	border-top: 0;
+	position: relative;
+	top: calc(75% + 1px);
+	left: 75%
+}
+
+#path2 {
+	width: 50px;
+	height: 75%;
+	background-color: #62617c;
+	position: relative;
+	top: 0px;
+	left: 75%;
+	border: 1px #2b7cff solid;
+	border-bottom: 0;
+	border-top: 0;
+	margin-top: -50px;
+}
+
+/* Along the side from top to bottom */
+#slot10 {
+	top: calc(75% - 191px);
+	left: calc(75% - 31px);
+}
+#slot11 {
+	top: calc(75% - 159px);
+	left: calc(75% - 31px);
+}
+#slot5 {
+	top: calc(75% - 127px);
+	left: calc(75% - 31px);
+}
+#slot4 {
+	top: calc(75% - 95px);
+	left: calc(75% - 31px);
+}
+#slot2 {
+	top: calc(75% - 63px);
+	left: calc(75% - 31px);
+}
+
+/* Central Slot */
+#slot1 {
+	top: calc(75% - 31px);
+	left: calc(75% - 31px);
+}
+
+/* Along the bottom from left to right */
+#slot8 {
+	top: calc(75% - 31px);
+	left: calc(75% - 191px);
+}
+#slot9 {
+	top: calc(75% - 31px);
+	left: calc(75% - 159px);
+}
+#slot7 {
+	top: calc(75% - 31px);
+	left: calc(75% - 127px);
+}
+#slot6 {
+	top: calc(75% - 31px);
+	left: calc(75% - 95px);
+}
+#slot3 {
+	top: calc(75% - 31px);
+	left: calc(75% - 63px);
+}
+
+/* NEW ALONG THE BOTTOM SLOTS 12 - 23 */
+#slot12 {
+	top: calc(75% - 31px);
+	left: calc(75% - 223px);
+}
+#slot13 {
+	top: calc(75% - 31px);
+	left: calc(75% - 255px);
+}
+#slot14 {
+	top: calc(75% - 31px);
+	left: calc(75% - 287px);
+}
+#slot15 {
+	top: calc(75% - 31px);
+	left: calc(75% - 319px);
+}
+#slot16 {
+	top: calc(75% - 31px);
+	left: calc(75% - 351px);
+}
+#slot17 {
+	top: calc(75% - 31px);
+	left: calc(75% - 383px);
+}
+#slot18 {
+	top: calc(75% - 31px);
+	left: calc(75% - 415px);
+}
+#slot19 {
+	top: calc(75% - 31px);
+	left: calc(75% - 447px);
+}
+#slot20 {
+	top: calc(75% - 31px);
+	left: calc(75% - 479px);
+}
+#slot21 {
+	top: calc(75% - 31px);
+	left: calc(75% - 511px);
+}
+#slot22 {
+	top: calc(75% - 31px);
+	left: calc(75% - 543px);
+}
+#slot23 {
+	top: calc(75% - 31px);
+	left: calc(75% - 575px);
+}
+
+/* NEW ALONG THE SIDE SLOTS 24 - 31*/
+#slot24 {
+	top: calc(75% - 223px);
+	left: calc(75% - 31px);
+}
+#slot25 {
+	top: calc(75% - 255px);
+	left: calc(75% - 31px);
+}
+#slot26 {
+	top: calc(75% - 287px);
+	left: calc(75% - 31px);
+}
+#slot27 {
+	top: calc(75% - 319px);
+	left: calc(75% - 31px);
+}
+#slot28 {
+	top: calc(75% - 351px);
+	left: calc(75% - 31px);
+}
+#slot29 {
+	top: calc(75% - 383px);
+	left: calc(75% - 31px);
+}
+#slot30 {
+	top: calc(75% - 415px);
+	left: calc(75% - 31px);
+}
+#slot31 {
+	top: calc(75% - 447px);
+	left: calc(75% - 31px);
+}
+
+/* Second Row Inside Corner Tower Slot */
+#slot32 {
+	top: calc(75% - 63px);
+	left: calc(75% - 63px);
+}
+
+/* NEW SECOND ROW INSIDE BOTTOM TOWER SLOTS 33 - 48*/
+#slot33 {
+	top: calc(75% - 63px);
+	left: calc(75% - 95px);
+}
+#slot34 {
+	top: calc(75% - 63px);
+	left: calc(75% - 127px);
+}
+#slot35 {
+	top: calc(75% - 63px);
+	left: calc(75% - 159px);
+}
+#slot36 {
+	top: calc(75% - 63px);
+	left: calc(75% - 191px);
+}
+#slot37 {
+	top: calc(75% - 63px);
+	left: calc(75% - 223px);
+}
+#slot38 {
+	top: calc(75% - 63px);
+	left: calc(75% - 255px);
+}
+#slot39 {
+	top: calc(75% - 63px);
+	left: calc(75% - 287px);
+}
+#slot40 {
+	top: calc(75% - 63px);
+	left: calc(75% - 319px);
+}
+#slot41 {
+	top: calc(75% - 63px);
+	left: calc(75% - 351px);
+}
+#slot42 {
+	top: calc(75% - 63px);
+	left: calc(75% - 383px);
+}
+#slot43 {
+	top: calc(75% - 63px);
+	left: calc(75% - 415px);
+}
+#slot44 {
+	top: calc(75% - 63px);
+	left: calc(75% - 447px);
+}
+#slot45 {
+	top: calc(75% - 63px);
+	left: calc(75% - 479px);
+}
+#slot46 {
+	top: calc(75% - 63px);
+	left: calc(75% - 511px);
+}
+#slot47 {
+	top: calc(75% - 63px);
+	left: calc(75% - 543px);
+}
+#slot48 {
+	top: calc(75% - 63px);
+	left: calc(75% - 575px);
+}
+
+/* NEW SECOND ROW INSIDE TOWER SLOTS 49 - 60 */
+#slot49 {
+	top: calc(75% - 95px);
+	left: calc(75% - 63px);
+}
+#slot50 {
+	top: calc(75% - 127px);
+	left: calc(75% - 63px);
+}
+#slot51 {
+	top: calc(75% - 159px);
+	left: calc(75% - 63px);
+}
+#slot52 {
+	top: calc(75% - 191px);
+	left: calc(75% - 63px);
+}
+#slot53 {
+	top: calc(75% - 223px);
+	left: calc(75% - 63px);
+}
+#slot54 {
+	top: calc(75% - 255px);
+	left: calc(75% - 63px);
+}
+#slot55 {
+	top: calc(75% - 287px);
+	left: calc(75% - 63px);
+}
+#slot56 {
+	top: calc(75% - 319px);
+	left: calc(75% - 63px);
+}
+#slot57 {
+	top: calc(75% - 351px);
+	left: calc(75% - 63px);
+}
+#slot58 {
+	top: calc(75% - 383px);
+	left: calc(75% - 63px);
+}
+#slot59 {
+	top: calc(75% - 415px);
+	left: calc(75% - 63px);
+}
+#slot60 {
+	top: calc(75% - 447px);
+	left: calc(75% - 63px);
+}
+
+/* NEW OUTSIDE CORNER TOWER SLOT 61 */
+#slot61 {
+	top: calc(75% + 51px);
+	left: calc(75% + 51px);
+}
+
+/* NEW OUTSIDE SIDE TOWER SLOTS 62 - 80*/
+#slot62 {
+	top: calc(75% + 51px);
+	left: calc(75% + 19px);
+}
+#slot63 {
+	top: calc(75% + 51px);
+	left: calc(75% - 13px);
+}
+#slot64 {
+	top: calc(75% + 51px);
+	left: calc(75% - 45px);
+}
+#slot65 {
+	top: calc(75% + 51px);
+	left: calc(75% - 77px);
+}
+#slot66 {
+	top: calc(75% + 51px);
+	left: calc(75% - 109px);
+}
+#slot67 {
+	top: calc(75% + 51px);
+	left: calc(75% - 141px);
+}
+#slot68 {
+	top: calc(75% + 51px);
+	left: calc(75% - 173px);
+}
+#slot69 {
+	top: calc(75% + 51px);
+	left: calc(75% - 205px);
+}
+#slot70 {
+	top: calc(75% + 51px);
+	left: calc(75% - 237px);
+}
+#slot71 {
+	top: calc(75% + 51px);
+	left: calc(75% - 269px);
+}
+#slot72 {
+	top: calc(75% + 51px);
+	left: calc(75% - 301px);
+}
+#slot73 {
+	top: calc(75% + 51px);
+	left: calc(75% - 333px);
+}
+#slot74 {
+	top: calc(75% + 51px);
+	left: calc(75% - 365px);
+}
+#slot75 {
+	top: calc(75% + 51px);
+	left: calc(75% - 397px);
+}
+#slot76 {
+	top: calc(75% + 51px);
+	left: calc(75% - 429px);
+}
+#slot77 {
+	top: calc(75% + 51px);
+	left: calc(75% - 461px);
+}
+#slot78 {
+	top: calc(75% + 51px);
+	left: calc(75% - 493px);
+}
+#slot79 {
+	top: calc(75% + 51px);
+	left: calc(75% - 525px);
+}
+#slot80 {
+	top: calc(75% + 51px);
+	left: calc(75% - 557px);
+}
+
+/* NEW OUTSIDE SIDE TOWERS 81 - 94*/
+#slot81 {
+	top: calc(75% + 19px);
+	left: calc(75% + 51px);
+}
+#slot82 {
+	top: calc(75% - 13px);
+	left: calc(75% + 51px);
+}
+#slot83 {
+	top: calc(75% - 45px);
+	left: calc(75% + 51px);
+}
+#slot84 {
+	top: calc(75% - 77px);
+	left: calc(75% + 51px);
+}
+#slot85 {
+	top: calc(75% - 109px);
+	left: calc(75% + 51px);
+}
+#slot86 {
+	top: calc(75% - 141px);
+	left: calc(75% + 51px);
+}
+#slot87 {
+	top: calc(75% - 173px);
+	left: calc(75% + 51px);
+}
+#slot88 {
+	top: calc(75% + 19px);
+	left: calc(75% + 51px);
+}
+#slot89 {
+	top: calc(75% - 205px);
+	left: calc(75% + 51px);
+}
+#slot90 {
+	top: calc(75% - 237px);
+	left: calc(75% + 51px);
+}
+#slot91 {
+	top: calc(75% - 269px);
+	left: calc(75% + 51px);
+}
+#slot92 {
+	top: calc(75% - 301px);
+	left: calc(75% + 51px);
+}
+#slot93 {
+	top: calc(75% - 333px);
+	left: calc(75% + 51px);
+}
+#slot94 {
+	top: calc(75% - 365px);
+	left: calc(75% + 51px);
+}
+#slot95 {
+	top: calc(75% - 397px);
+	left: calc(75% + 51px);
+}
+
+#basicTower {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	z-index: 1;
+}
+#fastTower {
+	position: absolute;
+	bottom: 20px;
+	left: 120px;
+	z-index: 1;
+}
+#slowTower {
+	position: absolute;
+	bottom: 20px;
+	left: 212px;
+	z-index: 1;
+}

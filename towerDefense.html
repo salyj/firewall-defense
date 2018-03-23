@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tower Defense Proof of Concept</title>
+	<link rel="stylesheet" href="styles.css" type="text/css" />
+	<script type="text/javascript" src="jbird.js"></script>
+	<script type="text/javascript" src="objectDefinitions.js"></script>
+</head>
+<body>
+	<div id="container">
+		<button id="start" onclick="start()">Start</button>
+		<div id="money"><p>20 $</p></div>
+		<div id="errorDisplay"></div>
+		<div id="waveCounter"><p>Wave: 1</p></div>
+		<div id="lifeCounter"><p>Lives: 10</p></div>
+		<div id="towerInfo">
+			<h4>Tower Info</h4>
+			<p>Cost:</p>
+			<p>Speed:</p>
+			<p>Damage:</p>
+			<p>Range:</p>
+		</div>
+		<div id="path1">
+		</div>
+		<div id="checkpoint">
+		</div>
+		<div id="path2">
+		</div>
+		<div class="towerSlot" id="slot1" onclick="chooseTowerSlot(this, 584, 435, )">
+		</div>
+		<div class="towerSlot" id="slot2" onclick="chooseTowerSlot(this, 585, 403)">
+		</div>
+		<div class="towerSlot" id="slot3" onclick="chooseTowerSlot(this, 553, 435)">
+		</div>
+		<div class="towerSlot" id="slot4" onclick="chooseTowerSlot(this, 585, 371)">
+		</div>
+		<div class="towerSlot" id="slot5" onclick="chooseTowerSlot(this, 585, 339)">
+		</div>
+		<div class="towerSlot" id="slot6" onclick="chooseTowerSlot(this, 521, 435)">
+		</div>
+		<div class="towerSlot" id="slot7" onclick="chooseTowerSlot(this, 489, 435)">
+		</div>
+		<div class="towerSlot" id="slot8" onclick="chooseTowerSlot(this, 425, 435)">
+		</div>
+		<div class="towerSlot" id="slot9" onclick="chooseTowerSlot(this, 457, 435)">
+		</div>
+		<div class="towerSlot" id="slot10" onclick="chooseTowerSlot(this, 585, 275)">
+		</div>
+		<div class="towerSlot" id="slot11" onclick="chooseTowerSlot(this, 585, 307)">
+		</div>
+		<div class="towerSlot" id="slot12" onclick="chooseTowerSlot(this, 393, 435)">
+		</div>
+		<div class="towerSlot" id="slot13" onclick="chooseTowerSlot(this, 361, 435)">
+		</div>
+		<div class="towerSlot" id="slot14" onclick="chooseTowerSlot(this, 329, 435)">
+		</div>
+		<div class="towerSlot" id="slot15" onclick="chooseTowerSlot(this, 297, 435)">
+		</div>
+		<div class="towerSlot" id="slot16" onclick="chooseTowerSlot(this, 265, 435)">
+		</div>
+		<div class="towerSlot" id="slot17" onclick="chooseTowerSlot(this, 233, 435)">
+		</div>
+		<div class="towerSlot" id="slot18" onclick="chooseTowerSlot(this, 201, 435)">
+		</div>
+		<div class="towerSlot" id="slot19" onclick="chooseTowerSlot(this, 169, 435)">
+		</div>
+		<div class="towerSlot" id="slot20" onclick="chooseTowerSlot(this, 137, 435)">
+		</div>
+		<div class="towerSlot" id="slot21" onclick="chooseTowerSlot(this, 105, 435)">
+		</div>
+		<div class="towerSlot" id="slot22" onclick="chooseTowerSlot(this, 73, 435)">
+		</div>
+		<div class="towerSlot" id="slot23" onclick="chooseTowerSlot(this, 41, 435)">
+		</div>
+		<div class="towerSlot" id="slot24" onclick="chooseTowerSlot(this, 585, 243)">
+		</div>
+		<div class="towerSlot" id="slot25" onclick="chooseTowerSlot(this, 585, 211)">
+		</div>
+		<div class="towerSlot" id="slot26" onclick="chooseTowerSlot(this, 585, 179)">
+		</div>
+		<div class="towerSlot" id="slot27" onclick="chooseTowerSlot(this, 585, 147)">
+		</div>
+		<div class="towerSlot" id="slot28" onclick="chooseTowerSlot(this, 585, 115)">
+		</div>
+		<div class="towerSlot" id="slot29" onclick="chooseTowerSlot(this, 585, 83)">
+		</div>
+		<div class="towerSlot" id="slot30" onclick="chooseTowerSlot(this, 585, 51)">
+		</div>
+		<div class="towerSlot" id="slot31" onclick="chooseTowerSlot(this, 585, 19)">
+		</div>
+		<div class="towerSlot" id="slot32" onclick="chooseTowerSlot(this, 553, 403)">
+		</div>
+		<div class="towerSlot" id="slot33" onclick="chooseTowerSlot(this, 521, 403)">
+		</div>
+		<div class="towerSlot" id="slot34" onclick="chooseTowerSlot(this, 489, 403)">
+		</div>
+		<div class="towerSlot" id="slot35" onclick="chooseTowerSlot(this, 457, 403)">
+		</div>
+		<div class="towerSlot" id="slot36" onclick="chooseTowerSlot(this, 425, 403)">
+		</div>
+		<div class="towerSlot" id="slot37" onclick="chooseTowerSlot(this, 393, 403)">
+		</div>
+		<div class="towerSlot" id="slot38" onclick="chooseTowerSlot(this, 361, 403)">
+		</div>
+		<div class="towerSlot" id="slot39" onclick="chooseTowerSlot(this, 329, 403)">
+		</div>
+		<div class="towerSlot" id="slot40" onclick="chooseTowerSlot(this, 297, 403)">
+		</div>
+		<div class="towerSlot" id="slot41" onclick="chooseTowerSlot(this, 265, 403)">
+		</div>
+		<div class="towerSlot" id="slot42" onclick="chooseTowerSlot(this, 233, 403)">
+		</div>
+		<div class="towerSlot" id="slot43" onclick="chooseTowerSlot(this, 201, 403)">
+		</div>
+		<div class="towerSlot" id="slot44" onclick="chooseTowerSlot(this, 169, 403)">
+		</div>
+		<div class="towerSlot" id="slot45" onclick="chooseTowerSlot(this, 137, 403)">
+		</div>
+		<div class="towerSlot" id="slot46" onclick="chooseTowerSlot(this, 105, 403)">
+		</div>
+		<div class="towerSlot" id="slot47" onclick="chooseTowerSlot(this, 73, 403)">
+		</div>
+		<div class="towerSlot" id="slot48" onclick="chooseTowerSlot(this, 41, 403)">
+		</div>
+		<div class="towerSlot" id="slot49" onclick="chooseTowerSlot(this, 553, 371)">
+		</div>
+		<div class="towerSlot" id="slot50" onclick="chooseTowerSlot(this, 553, 339)">
+		</div>
+		<div class="towerSlot" id="slot51" onclick="chooseTowerSlot(this, 553, 307)">
+		</div>
+		<div class="towerSlot" id="slot52" onclick="chooseTowerSlot(this, 553, 275)">
+		</div>
+		<div class="towerSlot" id="slot53" onclick="chooseTowerSlot(this, 553, 243)">
+		</div>
+		<div class="towerSlot" id="slot54" onclick="chooseTowerSlot(this, 553, 211)">
+		</div>
+		<div class="towerSlot" id="slot55" onclick="chooseTowerSlot(this, 553, 179)">
+		</div>
+		<div class="towerSlot" id="slot56" onclick="chooseTowerSlot(this, 553, 147)">
+		</div>
+		<div class="towerSlot" id="slot57" onclick="chooseTowerSlot(this, 553, 115)">
+		</div>
+		<div class="towerSlot" id="slot58" onclick="chooseTowerSlot(this, 553, 83)">
+		</div>
+		<div class="towerSlot" id="slot59" onclick="chooseTowerSlot(this, 553, 51)">
+		</div>
+		<div class="towerSlot" id="slot60" onclick="chooseTowerSlot(this, 553, 19)">
+		</div>
+		<div class="towerSlot" id="slot61" onclick="chooseTowerSlot(this, 667, 517)">
+		</div>
+		<div class="towerSlot" id="slot62" onclick="chooseTowerSlot(this, 635, 517)">
+		</div>
+		<div class="towerSlot" id="slot63" onclick="chooseTowerSlot(this, 603, 517)">
+		</div>
+		<div class="towerSlot" id="slot64" onclick="chooseTowerSlot(this, 571, 517)">
+		</div>
+		<div class="towerSlot" id="slot65" onclick="chooseTowerSlot(this, 539, 517)">
+		</div>
+		<div class="towerSlot" id="slot66" onclick="chooseTowerSlot(this, 507, 517)">
+		</div>
+		<div class="towerSlot" id="slot67" onclick="chooseTowerSlot(this, 475, 517)">
+		</div>
+		<div class="towerSlot" id="slot68" onclick="chooseTowerSlot(this, 443, 517)">
+		</div>
+		<div class="towerSlot" id="slot69" onclick="chooseTowerSlot(this, 411, 517)">
+		</div>
+		<div class="towerSlot" id="slot70" onclick="chooseTowerSlot(this, 379, 517)">
+		</div>
+		<div class="towerSlot" id="slot71" onclick="chooseTowerSlot(this, 347, 517)">
+		</div>
+		<div class="towerSlot" id="slot72" onclick="chooseTowerSlot(this, 315, 517)">
+		</div>
+		<div class="towerSlot" id="slot73" onclick="chooseTowerSlot(this, 283, 517)">
+		</div>
+		<div class="towerSlot" id="slot74" onclick="chooseTowerSlot(this, 251, 517)">
+		</div>
+		<div class="towerSlot" id="slot75" onclick="chooseTowerSlot(this, 219, 517)">
+		</div>
+		<div class="towerSlot" id="slot76" onclick="chooseTowerSlot(this, 187, 517)">
+		</div>
+		<div class="towerSlot" id="slot77" onclick="chooseTowerSlot(this, 155, 517)">
+		</div>
+		<div class="towerSlot" id="slot78" onclick="chooseTowerSlot(this, 123, 517)">
+		</div>
+		<div class="towerSlot" id="slot79" onclick="chooseTowerSlot(this, 91, 517)">
+		</div>
+		<div class="towerSlot" id="slot80" onclick="chooseTowerSlot(this, 59, 517)">
+		</div>
+		<div class="towerSlot" id="slot81" onclick="chooseTowerSlot(this, 667, 485)">
+		</div>
+		<div class="towerSlot" id="slot82" onclick="chooseTowerSlot(this, 667, 453)">
+		</div>
+		<div class="towerSlot" id="slot83" onclick="chooseTowerSlot(this, 667, 421)">
+		</div>
+		<div class="towerSlot" id="slot84" onclick="chooseTowerSlot(this, 667, 389)">
+		</div>
+		<div class="towerSlot" id="slot85" onclick="chooseTowerSlot(this, 667, 357)">
+		</div>
+		<div class="towerSlot" id="slot86" onclick="chooseTowerSlot(this, 667, 325)">
+		</div>
+		<div class="towerSlot" id="slot87" onclick="chooseTowerSlot(this, 667, 293)">
+		</div>
+		<div class="towerSlot" id="slot88" onclick="chooseTowerSlot(this, 667, 261)">
+		</div>
+		<div class="towerSlot" id="slot89" onclick="chooseTowerSlot(this, 667, 229)">
+		</div>
+		<div class="towerSlot" id="slot90" onclick="chooseTowerSlot(this, 667, 197)">
+		</div>
+		<div class="towerSlot" id="slot91" onclick="chooseTowerSlot(this, 667, 165)">
+		</div>
+		<div class="towerSlot" id="slot92" onclick="chooseTowerSlot(this, 667, 133)">
+		</div>
+		<div class="towerSlot" id="slot93" onclick="chooseTowerSlot(this, 667, 101)">
+		</div>
+		<div class="towerSlot" id="slot94" onclick="chooseTowerSlot(this, 667, 69)">
+		</div>
+		<div class="towerSlot" id="slot95" onclick="chooseTowerSlot(this, 667, 37)">
+		</div>
+		<button id="basicTower" onclick="createTower('basic')">Basic Tower</button>
+		<button id="fastTower" onclick="createTower('fast')">Fast Tower</button>
+		<button id="slowTower" onclick="createTower('slow')">Slow Tower</button>
+	</div>
+
+	<script>
+		var wave = new Array();
+		var towers = new Array();
+		var tracers = new Array();
+		var waveLength = 10;
+		var passes = 0;
+		var spawned = 0;
+		var waveNum = 0;
+		var waveSwitch = 0;
+		var money = 20;
+		var playerLives = 10;
+
+		var towerBuildQueue;
+		var towerQueueType;
+		var buildSwitch = 0;
+
+		function createMinion() {
+			var temp = document.createElement("div");
+			temp.classList.add("minion");
+			document.getElementById("container").appendChild(temp);
+
+			switch(waveNum) {
+				case 0:
+					wave.push(new minion(10, 2, 0, "e", 470, 5, temp, 1));
+					break;
+				case 1:
+					wave.push(new minion(20, 3, 0, "e", 470, 5, temp, 1));
+					break;
+				case 2:
+					wave.push(new minion(30, 1, 1, "e", 470, 5, temp, 2));
+					break;
+				case 3:
+					wave.push(new minion(40, 2, 1, "e", 470, 5, temp, 2));
+					break;
+				case 4:
+					wave.push(new minion(55, 3, 1, "e", 470, 5, temp, 3));
+					break;
+				case 5:
+				 	wave.push(new minion(65, 1, 2, "e", 470, 5, temp, 3));
+				 	break;
+				case 6:
+					wave.push(new minion(70, 2, 3, "e", 470, 5, temp, 4));
+					break;
+				case 7:
+					wave.push(new minion(80, 3, 3, "e", 470, 5, temp, 4));
+					break;
+				case 8:
+					wave.push(new minion(90, 1, 4, "e", 470, 5, temp, 5));
+					break;
+				case 9:
+					wave.push(new minion(105, 2, 4, "e", 470, 5, temp, 6));
+					break;
+			}
+		}
+
+		function start() {
+			var waveCount = waveNum + 1;
+
+			if(playerLives > 0) {
+				// Begin Spawning phase
+				if(waveSwitch == 0) {
+					waveSwitch = 1;
+				}
+
+				clearErrorDisplay();
+
+				document.getElementById("waveCounter").innerHTML = "<p>Wave: " + waveCount + "</p>";
+
+				if(waveSwitch == 1) {
+					interval = setInterval(function() {
+
+						if(passes % 60 == 0 && spawned < 10) {
+							createMinion();
+							spawned++;
+						}
+
+						if(passes % 20 == 0 && towers.length > 0) {
+							for(var t = 0; t < towers.length; t++) {
+								towers[t].getElement().removeAttribute("style");
+							}
+						}
+
+						for(var c = 0; c < towers.length; c++) {
+							if(passes % towers[c].getSpd() == towers[c].getLastShot() % towers[c].getSpd()) {
+								towers[c].findTarget(wave, passes);
+								towers[c].shoot();
+							} else if(!towers[c].getLastShot()) {
+								towers[c].findTarget(wave, passes);
+								towers[c].shoot();
+							}
+						}
+
+						for(var tr=0; tr < tracers.length; tr++) {
+							tracers[tr].calcDirection();
+
+							if((tracers[tr].getXPos() > tracers[tr].getEndPoint().getXPos() - 10
+								&& tracers[tr].getXPos() < tracers[tr].getEndPoint().getXPos() + 20
+								&& tracers[tr].getYPos() > tracers[tr].getEndPoint().getYPos() - 10
+								&& tracers[tr].getYPos() < tracers[tr].getEndPoint().getYPos() + 20)
+								|| tracers[tr].getEndPoint().getIsDead() || tracers[tr].getXPos() == undefined) {
+
+								document.getElementById("container").removeChild(tracers[tr].getElement());
+								tracers.splice(tr, 1);
+							}
+						}
+
+						if(wave.length > 0) {
+							for(var i = 0; i < wave.length; i++) {
+								wave[i].makeMove();
+								if(wave[i].getXPos() >= 620 && wave[i].getYPos() == 470) {
+									wave[i].setDirection("n");
+								} else if ((wave[i].getXPos() >= 620 && wave[i].getYPos() <= 0) || wave[i].getIsDead() == true) {
+									if(wave[i].getIsDead() == true) {
+										payPlayer(wave[i].getPayout());
+									} else {
+										playerLives--;
+										setPlayerLives(playerLives);
+										if(playerLives == 0) {
+											displayError("GAME OVER");
+										}
+									}
+									document.getElementById("container").removeChild(wave[i].getElement());
+									wave.splice(i, 1);
+								}
+							}
+						}
+
+						passes++;
+
+						// All minions spawned
+						if(spawned >= 10 && waveSwitch == 1) {
+							// console.log("All minions spawned.");
+							waveSwitch = 2;
+						}
+
+						// All minions destroyed
+						if(waveSwitch == 2 && wave.length == 0) {
+							// console.log("Preparing for next wave.");
+							waveSwitch = 0;
+							spawned = 0;
+							waveNum++;
+							clearInterval(interval);
+						}
+					}, 17);
+				}
+			}
+		}
+
+		function createTower(type) {
+			buildSwitch = 1;
+			displayTowerInfo(type);
+
+			switch(type) {
+				case 'basic':
+					if(money >= 10) {
+						towerBuildQueue = new BasicTower(8, 50, 150, 10, 0, 0);
+						clearErrorDisplay();
+					} else {
+						displayError("You can't afford that!");
+					}
+					break;
+				case 'fast':
+					if(money >= 6) {
+						towerBuildQueue = new BasicTower(4, 30, 120, 6, 0, 0);
+						clearErrorDisplay();
+					} else {
+						displayError("You can't afford that!");
+					}
+					break;
+				case 'slow':
+					if(money >= 14) {
+						towerBuildQueue = new BasicTower(13, 120, 300, 14, 0, 0);
+						clearErrorDisplay();
+					} else {
+						displayError("You can't afford that!");
+					}
+					break;
+			}
+			towerQueueType = type;
+		}
+
+		function chooseTowerSlot(element, xPos, yPos) {
+			var temp;
+			var flag = false;
+
+			if(towers.length > 0) {
+				for(var i = 0; i < towers.length; i++) {
+					if(towers[i].getElement() == element){
+						flag = true;
+						displayError("You can not place a tower on top of another tower!");
+					}
+				}
+			}
+
+			if(buildSwitch == 1 && flag == false) {
+				towerBuildQueue.setElement(element);
+				towerBuildQueue.setXPos(xPos);
+				towerBuildQueue.setYPos(yPos);
+
+				clearErrorDisplay();
+
+				if(towerQueueType == 'basic') {
+					temp = document.createElement("p");
+					temp.appendChild(document.createTextNode("X"));
+				} else if(towerQueueType == 'fast') {
+					temp = document.createElement("p");
+					temp.appendChild(document.createTextNode("O"));
+				} else if(towerQueueType == 'slow') {
+					temp = document.createElement("p");
+					temp.appendChild(document.createTextNode("#"));
+				}
+
+				towers.push(towerBuildQueue);
+				try {
+					element.appendChild(temp);
+					buyTower(towerBuildQueue.getCst());
+				} catch (e) {
+					console.log("Unable to append child element to parent element.: " + e);
+				} finally {
+					towerBuildQueue = null;
+				}
+
+				buildSwitch = 0;
+			} else if(buildSwitch == 0) {
+				displayError("Please select a tower to place before you select a spot to place it!");
+			}
+		}
+
+		function payPlayer(amount) {
+			money += amount;
+			document.getElementById("money").innerHTML = "<p>" + money + " $</p>";
+		}
+
+		function buyTower(amount) {
+			money -= amount;
+			document.getElementById("money").innerHTML = "<p>" + money + " $</p>";
+		}
+
+		function displayError(errorText) {
+			document.getElementById("errorDisplay").innerHTML = "<p>" + errorText + "</p>";
+		}
+		function clearErrorDisplay() {
+			document.getElementById("errorDisplay").innerHTML = "";
+		}
+
+		function setPlayerLives(lives) {
+			document.getElementById("lifeCounter").innerHTML = "<p>Lives: " + lives + "</p>";
+		}
+
+		function displayTowerInfo(type) {
+			switch(type) {
+				case 'basic':
+					document.getElementById("towerInfo").innerHTML = "<h4>Basic Tower</h4><p>Cost: $10</p><p>Speed: Normal</p><p>Damage: 8</p><p>Range: 150</p>";
+					break;
+				case 'fast':
+					document.getElementById("towerInfo").innerHTML = "<h4>Fast Tower</h4><p>Cost: $6</p><p>Speed: Fast</p><p>Damage: 5</p><p>Range: 120</p>"
+					break;
+				case 'slow':
+					document.getElementById("towerInfo").innerHTML = "<h4>Slow Tower</h4><p>Cost: $14</p><p>Speed: Slow</p><p>Damage: 13</p><p>Range: 300</p>"
+					break;
+			}
+		}
+	</script>
+</body>
+</html>
